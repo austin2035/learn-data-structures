@@ -16,7 +16,7 @@ weight: 20
 **数据域**，顾名思义，就是存放数据的地方。  
 **指针域**，是用来存放指针变量的地方，指针指向下一个节点的地址。  
 
-## 单链表  
+## 单链表的表示  
 
 单链表是线性表的**链式**表示和实现。把节点链接起来，就形成了单链表。  
 ![单链表](/images/linked_list.png)  
@@ -145,7 +145,7 @@ gcc -fsanitize=address -fno-omit-frame-pointer  -g linked_list.c  && ./a.out
 当前链表长度：1
 ```
 
-## 链表的遍历
+## 单链表的遍历
 
 较为简单，不再解释
 
@@ -163,7 +163,7 @@ void print_list(list *head)
 }
 ```
 
-## 链表的删除  
+## 单链表的删除  
 
 ![单链表删除](/images/list_delete.png)  
 假设要删除head后的节点，那么直接让`head->next = head->next->next`即可，但不要忘记释放被删除的节点。
@@ -194,97 +194,11 @@ list *list_delete_data(list *head, int pos)
 }
 ```
 
-## 完整代码  
+## 单链表的测试
 
-这样，一个基础的链表就写好了：
+这样，一个基础的链表就写好了，可以在`main`函数中测试。
 
 ```c
-#include <stdio.h>
-#include <stdlib.h>
-
-/* 定义表示单链表节点的结构体 */
-typedef struct node {
-    int data;
-    struct node *next;
-}list;
-
-/* 创建一个单链表，返回头指针 */
-list * create_list()
-{
-    /* 创建一个新的节点，由于使用了typedef关键字，
-     * 此处 list *head与struct node *head等价    
-    */
-    list *head = (list *)malloc(sizeof(list));
-    if(head==NULL) return NULL;
-    /* 初始化节点 */
-    head->data = 0; // 头结点数据域，我们用来表示链表长度
-    head->next = NULL; // 头节点指针域，暂时没有下一个节点，所以为空
-    return head;
-}
-
-list *list_insert_node(list *head, int data, int pos)
-{   
-    int i;
-    list *curr = head;
-
-    /* 如果要插入的位置比链表长，则属于非法操作 */
-    if(pos > curr->data) return NULL;
-
-    /* 创建一个节点，并初始化 */
-    list *node = (list *)malloc(sizeof(list));
-    if(node==NULL) return NULL;
-    node->data = data;
-    node->next = NULL;
-
-    /* 遍历链表，找到要插入的位置 */
-    for(i=0;i<pos;i++){
-        curr = curr->next;
-    }
-
-    /* 插入 */
-    node->next = curr->next;
-    curr->next = node;
-
-    /* 链表长度+1 */
-    head->data++;
-    return head;
-}
-
-/* 打印链表数据，但不包括头结点的数据*/
-void print_list(list *head)
-{
-    list *curr = head->next;
-    while (curr)
-    {
-        printf("%d \t", curr->data);
-        curr = curr->next;
-    }
-    printf("\n");
-}
-
-
-list *list_delete_data(list *head, int pos)
-{
-    int i;
-    list *curr = head;
-
-    /* 如果要删除的位置比链表长，则属于非法操作 */
-    if(pos > curr->data) return NULL;
-
-    /* 遍历链表，找到要删除的节点的前一个节点的指针 */
-    for(i=0;i<pos;i++){
-        curr = curr->next;
-    }
-    // 临时记录将被删除的节点
-    list *temp = curr->next;
-    curr->next = curr->next->next;
-    
-    //释放掉被删除节点的内存
-    free(temp);
-    head->data--;
-    return head;
-}
-
 int main()
 {
     int i;
@@ -311,3 +225,7 @@ int main()
 4       3       2       1       0 
 3       2       1       0 
 ```
+
+## 完整代码  
+
+完整代码，详见代码清单。  
