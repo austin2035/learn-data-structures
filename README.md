@@ -4,13 +4,12 @@
 
 ## 项目说明  
 
-本项目使用**hugo**（extended）构建，安装后执行
+本项目使用**hugo**构建，安装`hogo`（extended）后在本目录下执行即可在浏览器中打开，localhost:8000 并阅读。或者直接打开`public`文件夹中的静态文件进行阅读。  
 
 ```bash
 hugo server --minify --theme book --port 8000 --bind 0.0.0.0
 ```
 
-即可在浏览器中打开，localhost:8000 并阅读。或者直接打开`public`文件夹中的静态文件进行阅读。  
 
 ## 为什么写此笔记?  
 
