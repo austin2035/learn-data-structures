@@ -3,11 +3,11 @@ title: 单链表
 type: docs
 weight: 20
 ---
-{{< hint danger >}}
-**万事开头难**  
+
+## 本节的重要性
+
 这里我要多啰嗦几句，因为单链表是非常基础的链式结构，所以当你学会了用C语言描述单链表的时，后面的堆、栈、双向链表、哈希表等用C描述将不在话下。  
 如果你作为一名初学者，那应该仔细阅读本篇，自己敲一遍代码。
-{{< /hint >}}
 
 ## 单链表的节点  
 
@@ -74,20 +74,21 @@ list * create_list()
 
 ## 单链表的插入  
 
-试想如下情况，一个新的节点`n`，要插入到`head`节点后。
-![单链表插入](/images/list_insert.png)  
+试想如下情况，一个新的节点`n`，要插入到`x`节点后。
+![单链表插入](/images/linked_list_insert.png)  
+图中虚线表示断开连接，下同。  
 按照一般思路可能是:
 
 ```c
-head->next = n;
-n->next = head->next;
+x->next = n;
+n->next = x->next;
 ```
 
-显然，这是错误的，因为执行`head->next = n`之后，`n->next = head->next`等价于`n->next = n` ，所以正确的做法应该是这样；
+显然，这是错误的，因为执行`x->next = n`之后，`n->next = x->next`等价于`n->next = n` ，所以正确的做法应该是这样；
 
 ```c
-n->next = head->next;
-head->next = n;
+n->next = x->next;
+x->next = n;
 ```
 
 完整版插入函数：
@@ -165,7 +166,7 @@ void print_list(list *head)
 
 ## 单链表的删除  
 
-![单链表删除](/images/list_delete.png)  
+![单链表删除](/images/linked_list_delete.png)  
 假设要删除head后的节点，那么直接让`head->next = head->next->next`即可，但不要忘记释放被删除的节点。
 基于此思路：
 

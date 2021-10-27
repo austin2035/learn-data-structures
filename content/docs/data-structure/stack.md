@@ -32,28 +32,40 @@ weight: 30
 定义表示链栈节点的结构体
 
 ```c
-typedef struct node_stack {
-    struct node_stack *next;
+typedef struct stack_node {
+    struct stack_node *next;
     void *data;
-}node_stack;
+}stack_node;
 ```
 
 定义表示链栈的结构体  
 
 ```c
 typedef struct stack {
-    struct node_stack *top;
+    struct stack_node *top;
     int length; // 表示栈的高度
 }stack;
 ```
 
 注意，**top**指针指向的是一个表示栈的节点的结构体。
 
+## 函数清单  
+
+下面是用于操作栈的函数名及其作用与复杂度  
+
+|函数|作用|算法复杂度|
+|----|----|----|
+|stack_create|创建新的链式栈|O(1)|
+|stack_release|释放栈，以及栈中的节点|O(N)|
+|stack_push|入栈|O(1)|
+|stack_pop|出栈|O(1)|
+|stack_empty|释放栈中所有节点，但不释放栈本身|O(N)|
+
 ## 创建栈  
 
 ```c
 /* 创建栈 */
-stack *create_stack()
+stack *stack_create()
 {
     stack *stack =  (struct stack*)malloc(sizeof(struct stack));
     /* 等价写法：
@@ -75,7 +87,7 @@ stack *create_stack()
 stack *stack_push(stack *stack, void *data)
 {
     /* 创建一个节点 */
-    node_stack *node = (struct node_stack*)malloc(sizeof(struct node_stack));
+    stack_node *node = (struct stack_node*)malloc(sizeof(struct stack_node));
     if(node==NULL) return NULL;
     node->data = data;
 
@@ -95,7 +107,7 @@ stack *stack_push(stack *stack, void *data)
 void *stack_pop(stack *stack)
 {
     /* 临时保存栈顶元素 */
-    node_stack *curr = stack->top;
+    stack_node *curr = stack->top;
     if(curr==NULL) return NULL;
     void *data = curr->data;
     stack->top = stack->top->next;
@@ -113,7 +125,7 @@ void *stack_pop(stack *stack)
 void stack_empty(stack *stack)
 {
     int length = stack->length;
-    node_stack *curr, *next;
+    stack_node *curr, *next;
     curr = stack->top;
 
     /* 根据栈的高度确定删除节点的次数 */
@@ -129,7 +141,7 @@ void stack_empty(stack *stack)
 }
 ```
 
-## 释放栈  
+## 清除栈  
 
 ```c
 /* 清空栈中所有元素并删除栈 */
@@ -152,7 +164,7 @@ int main()
     char c = 'c';
 
     /* 创建一个栈 */
-    stack *stack = create_stack();
+    stack *stack = stack_create();
 
     printf("%p\n", stack_pop(stack));
 
