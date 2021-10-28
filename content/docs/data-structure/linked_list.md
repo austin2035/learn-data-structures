@@ -27,8 +27,10 @@ weight: 20
 
 ```c
 struct node {
-    int data;
+    /* 后继节点 */
     struct node *next;
+    /* 值 */
+    int data;
 };
 ```
 
@@ -42,8 +44,10 @@ struct node {
 
 ```c
 typedef struct node {
-    int data;
+    /* 后继节点 */
     struct node *next;
+    /* 值 */
+    int data;
 }list;
 ```
 
