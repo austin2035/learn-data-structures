@@ -41,17 +41,20 @@ typedef struct list
 1. 链表节点(list_node)带有**prev**和**next**两个指针，这意味着，可以从表头到表尾或表尾到表头两个方向遍历或迭代链表。  
 1. 链表本身(list)和队列(queue)类似，维护**head**和**tail**两个指针，这意味着，在表头或者表尾的插入的复杂度为O(1)，而单链表在表尾执行插入操作时，需要从表头遍历到表尾后插入，复杂度为O(n)。  
 
-
 ## 双链表的创建  
 
 ```c
 /* 创建链表 */
 list * create_list(void)
 {
+    /* 创建链表 */
     list *list = (struct list *)malloc(sizeof(struct list));
     if(list==NULL) return NULL;
+    
+    /* 初始化链表 */
     list->head = list->tail = NULL;
     list->length = 0;
+    
     return list;
 }
 ```
@@ -73,9 +76,11 @@ list * list_add_node_head(list *list, void *value)
     if(list->length == 0) {
         list->head = list->tail = node;
         node->prev = node->next = NULL;
-    }else{
+    }else {
+        /* 设置新节点 */
         node->prev = NULL;
         node->next = list->head;
+        /* 设置链表 */
         list->head->prev = node;
         list->head = node;
     }

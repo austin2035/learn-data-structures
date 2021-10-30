@@ -80,8 +80,6 @@ stack *stack_create()
 
 ## 入栈  
 
-![链栈的push操作](/images/stack_push.png)  
-
 ```c
 /* 入栈 */
 stack *stack_push(stack *stack, void *data)
@@ -100,6 +98,10 @@ stack *stack_push(stack *stack, void *data)
 }
 ```
 
+在有元素入栈时，首先创建一个节点，然后执行插入操作，将新节点的后继节点`next`指向栈顶节点，接着移动栈顶指针至指向新节点`node`。最后，栈的高度自增1。
+
+![链栈的push操作](/images/stack_push.png)  
+
 ## 出栈  
 
 ```c
@@ -117,6 +119,8 @@ void *stack_pop(stack *stack)
     return data;
 }
 ```
+
+出栈时，首先临时保存栈顶节点指针，用于在返回栈顶节点数据域的值之前的释放操作。接着移动栈顶指针至栈顶节点的下一个节点。最后释放临时保存的节点，栈的高度自减1，返回数据，出栈操作完成。
 
 ## 清空栈  
 
