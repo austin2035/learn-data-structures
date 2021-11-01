@@ -154,7 +154,7 @@ list * list_add_node_tail(list *list, void *value)
 然后，链表的`tail->next`指向新节点，表尾指针`tail`指向新节点。  
 最后，插入完成，链表长度自增1。  
 
-![双链表的表尾插入操作](/images/list_insert_tail.png) 
+![双链表的表尾插入操作](/images/list_insert_tail.png)
 
 ### 节点的删除
 

@@ -1,7 +1,7 @@
 ---
-title: struct与typedef
+title: 结构体与typedef
 type: docs
-weight: 12
+weight: 13
 ---
 
 ## struct的声明
