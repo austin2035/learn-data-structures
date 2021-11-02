@@ -1,6 +1,7 @@
 
 ## 数据结构(C语言)  
 
+配套笔记：  
 [https://lookcos.cn/archives/1120.html](https://lookcos.cn/archives/1120.html)
 
 ## 关于作者  
