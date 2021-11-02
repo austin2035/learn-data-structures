@@ -85,6 +85,21 @@ typedef struct dict {
 
 ![字典](/images/dict1.png)
 
+## 函数清单  
+
+下面是用于操作队列的函数名及其作用与复杂度  
+
+|函数|作用|算法复杂度|
+|----|----|----|
+|hash_integer|计算整型key的hash值|O(1)|
+|hash_33|计算字符型key的hash值|O(N)|
+|dict_create|创建新字典|O(1)|
+|dict_create_entry|创建一个dict_entry|O(1)|
+|dict_put_entry|字典插入一个entry|O(1)|
+|dict_get_value|获取key对应的val|最佳O(1),最坏O(N)|
+|dict_empty|清除字典所有entry|O(N2)|
+|dict_release|释放整个字典|O(N2)|
+
 ## 哈希函数的选择  
 
 ```c
@@ -127,9 +142,9 @@ dict *dict_create(int type)
     dict->sizemask = dict->size - 1;
     /* 为数组申请内存 */
     dict->table = (dict_entry **)malloc(sizeof(dict_entry *) *(dict->size));
+    if (dict->table == NULL) return NULL;
     /* 数组元素全部置零 */
     memset(dict->table, 0, sizeof(dict_entry *) * (dict->size));
-    if (dict->table == NULL) return NULL;
     return dict;
 }
 ```
@@ -285,6 +300,7 @@ void dict_empty(dict *dict)
 void dict_release(dict *dict)
 {
     dict_empty(dict);
+    free(dict->table);
     free(dict);
 }
 ```

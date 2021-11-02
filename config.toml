@@ -1,6 +1,6 @@
 # hugo server --minify --themesDir ... --baseURL=http://0.0.0.0:1313/theme/hugo-book/
 
-baseURL = 'https://example.com/'
+baseURL = 'https://lookcos.cn/docs/data-structures/'
 title = '数据结构（C语言）'
 theme = 'book'
 

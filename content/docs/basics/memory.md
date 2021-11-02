@@ -95,3 +95,42 @@ collect2: 错误：ld 返回 1
 ```bash
 yum install libasan.x86_64
 ```
+
+### 建议升级高版本gcc
+
+查看版本方法如下，
+
+```bash
+gcc --version
+```
+
+如果是Centos 7,默认gcc版本可能是`4.8`,有点低，因为部分内存报错检测不出。
+
+升级方法如下：
+
+```bash
+yum install centos-release-scl
+yum install devtoolset-9-gcc*
+scl enable devtoolset-9 bash
+```
+
+直接替换旧版本gcc：
+
+```bash
+mv /usr/bin/gcc /usr/bin/gcc-4.8.5
+ln -s /opt/rh/devtoolset-9/root/bin/gcc /usr/bin/gcc
+```
+
+### 升级gcc后报错  
+
+```
+/opt/rh/devtoolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/ld: 找不到 libasan_preinit.o: 没有那个文件或目录
+/opt/rh/devtoolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/ld: 找不到 -lasan
+collect2: error: ld returned 1 exit status
+```
+
+执行如下安装命令即可
+
+```bash
+yum install devtoolset-9-libasan-devel libssan
+```
