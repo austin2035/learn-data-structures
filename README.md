@@ -3,8 +3,6 @@
 
 基于C语言，从零实现各种常见数据结构。其中，大部分都封装为库，且经过内存检测，可直接用于leetcode刷题等。
 
-推荐在线阅读：  
-[https://lookcos.cn/archives/1120.html](https://lookcos.cn/archives/1120.html)
 
 ### 为什么写此笔记?
 
