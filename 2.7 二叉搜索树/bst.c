@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define BST_NODE_CHILD 0
+#define BST_NODE_PARENT 1
+
 typedef struct bst_node
 {
     int val;
@@ -30,14 +33,12 @@ bst_node *bst_create_node(int val) {
     return node;
 }
 
-bst *bst_insert_node(bst *bst, int val) {
+bst *bst_search_node(bst *bst, int type, int val)
+{
     bst_node *curr = bst->root;
     bst_node *parent = NULL;
 
-    if (curr==NULL)
-    {
-        bst->root = bst_create_node(val);
-    }
+    if(curr==NULL) return NULL;
 
     while (curr != NULL)
     {
@@ -51,6 +52,22 @@ bst *bst_insert_node(bst *bst, int val) {
             curr = curr->right;
         }
     }
+
+    if(type == BST_NODE_CHILD && curr != NULL) return curr;
+    if(type == BST_NODE_PARENT && parent != NULL) return parent;
+    return NULL;
+}
+
+bst *bst_insert_node(bst *bst, int val)
+{
+    bst_node *curr = bst->root;
+    bst_node *parent = NULL;
+
+    if (curr==NULL)
+    {
+        bst->root = bst_create_node(val);
+    }
+    parent = bst_search_node(bst, BST_NODE_PARENT, val);
     
     if(parent != NULL) {
         if(val < parent->val) {
@@ -62,6 +79,18 @@ bst *bst_insert_node(bst *bst, int val) {
 
     bst->size ++;
     return bst;
+}
+
+void bst_delete_node(bst *bst, int val)
+{
+    bst_node *curr = bst->root;
+    bst_node *parent = NULL;
+
+    while (curr != NULL)
+    {
+        
+    }
+    
 }
 
 void bst_inorder_traversal(bst_node *node) {
