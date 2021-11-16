@@ -1,6 +1,6 @@
 个人认为好的程序员总是会合理的使用内存，学习数据结构也需要对C语言的内存管理做个简单的了解，为什么是简单的了解而不是深入呢？因为C语言及其内存管理不是三言两语可以说清的，这里我们只谈谈常用的内存管理方法。
 
-## 为什么是malloc？  
+## 什么是malloc？  
 
 以往我们在学习c语言时，通常只是简单的使用int，float之类来声明变量。像这种变量，通常存放在栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量等值。而在实际编程中，我们需要足够的内存来保证程序的存储需求，由于stack区内存相对较小，所以我们需要使用malloc与free等函数来从堆区（heap）动态申请与释放内存，堆区要比栈区大得多。  
 
@@ -129,6 +129,5 @@ collect2: error: ld returned 1 exit status
 ```bash
 yum install devtoolset-9-libasan-devel libssan
 ```
-
 
   [1]: https://lookcos.cn/usr/uploads/2021/11/2076423197.png
