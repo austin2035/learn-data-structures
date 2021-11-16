@@ -4,9 +4,6 @@
 推荐在线阅读：  
 [https://lookcos.cn/archives/1120.html](https://lookcos.cn/archives/1120.html)
 
-## 目录
-
-
 ## 关于作者  
 
 作者目前就读于某本科大三，同时在北京某互联网公司进行远程工作（一年了）。主要研究全栈及网络爬虫开发，对包括但不与限于基础数据结构与算法、socket编程、安卓逆向、Python Web、前端开发等技术感兴趣。  
