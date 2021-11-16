@@ -8,6 +8,13 @@
 
 数据结构的重要性不必多说，大多数人初次学习数据结构应该是在大学期间。很多高校学完 C 语言就立刻转向了数据结构学习，在很多同学对 C 语言语法，比如对结构体、指针等理解尚浅和某些教材不说人话的情况下学习。所以，原本很简单的内容，可能会难以理解消化，甚至教材会将其进行复杂化描述。为了巩固自己学习，同时与大家交流，我一边学习一边记录。 本笔记有很多代码设计思路来自教科书级别 C 语言开源项目 redis 。
 
+## 参考资料  
+
+- 阮一峰. C语言教程. [https://wangdoc.com/clang/intro.html](https://wangdoc.com/clang/intro.html).
+- antirez. Redis3.2.9. [https://github.com/redis/redis/releases/tag/3.2.9](https://github.com/redis/redis/releases/tag/3.2.9)
+- antirez. Redis6.0.0. [https://github.com/redis/redis/releases/tag/6.0.0](https://github.com/redis/redis/releases/tag/6.0.0)
+- 黄健宏.《Redis设计与实现》. [http://redisbook.com/](http://redisbook.com/)
+
 ## Future  
 
 后面还有挺多要更新的，跳表、红黑树、B+-树等。
