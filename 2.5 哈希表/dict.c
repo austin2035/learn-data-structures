@@ -71,36 +71,36 @@ dict *dict_put_entry(dict *dict, void *key, void *val)
 {
     unsigned int hash = dict->hash(key);
     int pos = hash & dict->sizemask;
-    dict_entry *entry, *curr;
+    dict_entry *entry, *current;
     if(dict->table[pos]==0){
         printf("新增\n");
         entry = dict_create_entry(key, val);
         dict->table[pos] = entry;
     } else {
-        curr = dict->table[pos];
+        current = dict->table[pos];
         
         /* 首先判断第一个节点是否符合更新的情况 */
-        /* if(dict->hash(curr->key) == dict->hash(key)) {
+        /* if(dict->hash(current->key) == dict->hash(key)) {
             printf("更新\n");
-            curr->val = val;
+            current->val = val;
             return dict;
         } */
 
         /* 如果不符合，往下找，直到找到hash值相等的key的节点，则更新，
          * 或者直到next==NULL，此时新增在链表尾部。 */
-       /*  while(curr->next != NULL) {    
+       /*  while(current->next != NULL) {    
             printf("往下找\n");
-            if(dict->hash(curr->next->key) == dict->hash(key)) {
+            if(dict->hash(current->next->key) == dict->hash(key)) {
                 printf("更新\n");
-                curr->next->val = val;
+                current->next->val = val;
                 return dict;
             };
-            curr = curr->next;
+            current = current->next;
         } */
 
         /* printf("尾部插入\n");
         entry = dict_create_entry(key, val);
-        curr->next = entry;
+        current->next = entry;
     }
     return dict;
 } */
