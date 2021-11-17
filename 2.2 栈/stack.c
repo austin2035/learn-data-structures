@@ -36,12 +36,12 @@ stack *stack_push(stack *stack, void *data)
 void *stack_pop(stack *stack)
 {
     /* 临时保存栈顶元素 */
-    stack_node *curr = stack->top;
-    if(curr==NULL) return NULL;
-    void *data = curr->data;
+    stack_node *current = stack->top;
+    if(current==NULL) return NULL;
+    void *data = current->data;
     stack->top = stack->top->next;
 
-    free(curr);
+    free(current);
     stack->length--;
     return data;
 }
@@ -50,14 +50,14 @@ void *stack_pop(stack *stack)
 void stack_empty(stack *stack)
 {
     int length = stack->length;
-    stack_node *curr, *next;
-    curr = stack->top;
+    stack_node *current, *next;
+    current = stack->top;
     /* 根据栈的高度确定删除节点的次数 */
     while (length--)
     {
-        next = curr->next;
-        free(curr);
-        curr = next; 
+        next = current->next;
+        free(current);
+        current = next; 
     }
     
     stack->length = 0;
