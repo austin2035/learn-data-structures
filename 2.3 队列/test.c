@@ -1,3 +1,7 @@
+/* 编译并运行测试，参考如下命令
+ * gcc -fsanitize=address -fno-omit-frame-pointer -g *.c  && ./a.out
+ */
+
 #include <stdio.h>
 #include "queue.h"
 

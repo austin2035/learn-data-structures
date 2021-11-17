@@ -102,21 +102,21 @@ queue *queue_push_data(queue *queue, void *data)
 /* 出队 */
 void* queue_pull_data(queue *queue)
 {
-    queue_node *curr = queue->head->next;
+    queue_node *current = queue->head->next;
     
     /* 判断队列中是否有数据 */
-    if(curr==NULL) return NULL;
+    if(current==NULL) return NULL;
 
-    void *data = curr->data;
+    void *data = current->data;
     
-    queue->head->next = curr->next;
+    queue->head->next = current->next;
     
     /* 判断队列中除头结点外，是否只有一个节点，避免尾指针丢失 */
-    if(queue->tail==curr) {
+    if(queue->tail==current) {
         queue->tail = queue->head;
     }
 
-    free(curr);
+    free(current);
     queue->length--;
     return data;
 }
@@ -135,15 +135,15 @@ void* queue_pull_data(queue *queue)
 void queue_empty(queue *queue)
 {   
     int length = queue->length;
-    queue_node *curr, *next;
+    queue_node *current, *next;
 
     // 注意这里不释放头节点
-    curr = queue->head->next;
+    current = queue->head->next;
     while (length--)
     {   
-        next = curr->next;
-        free(curr);
-        curr = next;
+        next = current->next;
+        free(current);
+        current = next;
     }
     
     queue->head->next = NULL;
