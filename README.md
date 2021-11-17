@@ -14,6 +14,7 @@
 - antirez. Redis3.2.9. [https://github.com/redis/redis/releases/tag/3.2.9](https://github.com/redis/redis/releases/tag/3.2.9)
 - antirez. Redis6.0.0. [https://github.com/redis/redis/releases/tag/6.0.0](https://github.com/redis/redis/releases/tag/6.0.0)
 - 黄健宏.《Redis设计与实现》. [http://redisbook.com/](http://redisbook.com/)
+- 黄建宏.带有详细注释的Redis3.0源码. [https://github.com/huangz1990/redis-3.0-annotated](https://github.com/huangz1990/redis-3.0-annotated)
 
 ## Future  
 
