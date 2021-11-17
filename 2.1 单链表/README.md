@@ -100,10 +100,10 @@ x->next = n;
 list * list_insert_node(list *head, int data, int pos)
 {   
     int i;
-    list *curr = head;
+    list *current = head;
 
     /* 如果要插入的位置比链表长，则属于非法操作 */
-    if(pos > curr->data) return NULL;
+    if(pos > current->data) return NULL;
 
     /* 创建一个节点，并初始化 */
     list *node = (list *)malloc(sizeof(list));
@@ -113,12 +113,12 @@ list * list_insert_node(list *head, int data, int pos)
 
     /* 遍历链表，找到要插入的位置 */
     for(i=0;i<pos;i++){
-        curr = curr->next;
+        current = current->next;
     }
 
     /* 插入 */
-    node->next = curr->next;
-    curr->next = node;
+    node->next = current->next;
+    current->next = node;
 
     /* 链表长度+1 */
     head->data++;
@@ -156,11 +156,11 @@ gcc -fsanitize=address -fno-omit-frame-pointer  -g linked_list.c  && ./a.out
 /* 打印链表数据，但不包括头结点的数据*/
 void print_list(list *head)
 {
-    list *curr = head->next;
-    while (curr)
+    list *current = head->next;
+    while (current)
     {
-        printf("%d \t", curr->data);
-        curr = curr->next;
+        printf("%d \t", current->data);
+        current = current->next;
     }
     printf("\n");
 }
@@ -176,19 +176,19 @@ void print_list(list *head)
 list *list_delete_data(list *head, int pos)
 {
     int i;
-    list *curr = head;
+    list *current = head;
 
     /* 如果要删除的位置比链表长，则属于非法操作 */
-    if(pos > curr->data) return NULL;
+    if(pos > current->data) return NULL;
 
     /* 遍历链表，找到要删除的节点的前一个节点的指针 */
     for(i=0;i<pos;i++){
-        curr = curr->next;
+        current = current->next;
     }
     // 临时记录将被删除的节点
-    list *temp = curr->next;
+    list *temp = current->next;
     // 删除节点
-    curr->next = curr->next->next;
+    current->next = current->next->next;
     
     //释放掉被删除节点的内存
     free(temp);
