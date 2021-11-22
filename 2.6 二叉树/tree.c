@@ -1,49 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct tree {
+
+typedef struct node {
     struct tree *left, *right;
     int value;
+}node;
+
+typedef struct tree {
+    struct node *root;
+    int size;
 }tree;
 
-tree *create_node (int value) {
-    tree *node = (struct tree*)malloc(sizeof(struct tree));
-    if(node==NULL) return NULL;
-    node->left = NULL;
-    node->right = NULL;
-    node->value = value;
-    return node;
-}
 
-tree *insert(tree *tree, int value) {
-   if(tree==NULL) {
-       return create_node(value);
-   }
-   if(value < tree->value) {
-       tree->left = insert(tree->left, value);
-   } else {
-       tree->right = insert(tree->right, value);
-   } 
-   return tree;
-}
 
-void inorder_travese(tree *tree) {
-    if(tree != NULL) {
-        inorder_travese(tree->left);
-        printf("%d\n", tree->value);
-        inorder_travese(tree->right);
+void inorder_travese(node *node) {
+    if(node != NULL) {
+        inorder_travese(node->left);
+        printf("%d\n", node->value);
+        inorder_travese(node->right);
     }
 }
 
 int main() {
-    tree *tree = create_node(15);
     int arr[] = {1, 3, 5, 7, 6, 8, 9, 11, 13, 16, 18, 20, 22, 23, 26, 29};
     int length = sizeof(arr) / sizeof(int);
-    int i;
-    for(i=0;i<length;i++) {
-        printf("insert: %d\n", arr[i]);
-        insert(tree, arr[i]);
-    }
-    inorder_travese(tree);
     return 0;
 }
