@@ -8,7 +8,7 @@
 
 ### 树的相关概念
 
-![](https://lookcos.cn/usr/uploads/2021/11/2764483793.png)
+![tree](https://lookcos.cn/usr/uploads/2021/11/2764483793.png)
 
 以上图为准，下面介绍相关概念：
 
