@@ -190,7 +190,7 @@ bst *bst_insert_node(bst *bst, int key)
 
 ![https://lookcos.cn/usr/uploads/2021/12/711358893.gif](https://lookcos.cn/usr/uploads/2021/12/711358893.gif)
 
-删节3（情况3）动图演示：
+删除节点3（情况3）动图演示：
 
 ![https://lookcos.cn/usr/uploads/2021/12/3764915767.gif](https://lookcos.cn/usr/uploads/2021/12/3764915767.gif)
 
