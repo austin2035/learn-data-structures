@@ -104,21 +104,24 @@ bst *bst_insert_node(bst *bst, int key)
 {
     bst_node *current = bst->root;
     bst_node *parent = NULL;
-
+    /* 如果是空二叉搜索树，则直接新建节点作为根节点即可 */
     if (current==NULL) {
         bst->root = bst_create_node(key);
     } else {
+        /* 找到要插入节点的父节点 */
         parent = bst_search_node(bst->root, BST_NODE_PARENT, key);
         if(parent==NULL) return NULL;
+        /* 与父节点比大小，看应该在父节点的左子树还是右子树 */
         if(key < parent->key) {
             parent->left = bst_create_node(key);
         } else if(key == parent->key)  {
+            /* 如果key重复则取消插入 */
             return NULL;
         } else {
             parent->right = bst_create_node(key);
         }
     }
-    
+    /* 二叉搜索树的节点数增加1 */
     bst->size ++;
     return bst;
 }

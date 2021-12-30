@@ -1,6 +1,7 @@
 {
     "C_Cpp.errorSquiggles": "Enabled",
     "files.associations": {
-        "stack.h": "c"
+        "stack.h": "c",
+        "initializer_list": "c"
     }
 }
