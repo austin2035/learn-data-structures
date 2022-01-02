@@ -6,6 +6,7 @@
 #define AVL_NODE_CHILD 0
 #define AVL_NODE_PARENT 1
 
+/* 平衡二叉树的节点 */
 typedef struct avl_node {
     /* 关键字 */
     int key;
@@ -19,7 +20,7 @@ typedef struct avl_node {
 }avl_node;
 
 
-/* 二叉平衡树本身 */
+/* 平衡树二叉树本身 */
 typedef struct avl {
     /* 指向二叉树根节点 */
     struct avl_node *root;
@@ -67,7 +68,7 @@ int max(avl_node *x, avl_node *y)
     return m>=n?m:n;
 }
 
-/* 创建一棵二叉平衡树 */
+/* 创建一棵平衡二叉树 */
 avl *avl_create(void)
 {
     avl *avl = (struct avl*)malloc(sizeof(struct avl));
@@ -152,7 +153,7 @@ avl_node *avl_search_node(avl_node *node, int type, int key)
     return parent;
 }
 
-/* 二叉平衡树，插入一个节点 */
+/* 平衡树二叉树，插入一个节点 */
 avl *avl_insert_node(avl *avl, int key)
 {
 
