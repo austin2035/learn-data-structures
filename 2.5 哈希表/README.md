@@ -363,5 +363,5 @@ age: 18
 详见代码清单。
 
 
-  [1]: https://lookcos.cn/usr/uploads/2021/11/3735377325.png
-  [2]: https://lookcos.cn/usr/uploads/2021/11/3177806999.png
+  [1]: ../picture/dict1.png
+  [2]: ../picture/dict2.png

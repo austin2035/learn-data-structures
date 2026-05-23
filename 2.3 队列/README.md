@@ -211,8 +211,8 @@ int main()
 完整代码，详见代码清单。  
 
 
-  [1]: https://lookcos.cn/usr/uploads/2021/11/4225409542.png
-  [2]: https://lookcos.cn/usr/uploads/2021/11/4225494174.png
-  [3]: https://lookcos.cn/usr/uploads/2021/11/2259588738.png
-  [4]: https://lookcos.cn/usr/uploads/2021/11/3257292485.png
-  [5]: https://lookcos.cn/usr/uploads/2021/11/1603936778.png
+  [1]: ../picture/queue.png
+  [2]: ../picture/queue_create.png
+  [3]: ../picture/queue_push1.png
+  [4]: ../picture/queue_push2.png
+  [5]: ../picture/queue_pop.png

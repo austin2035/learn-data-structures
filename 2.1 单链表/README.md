@@ -234,8 +234,8 @@ int main()
 完整代码，详见代码清单。  
 
 
-  [1]: https://lookcos.cn/usr/uploads/2021/11/1747607747.png
-  [2]: https://lookcos.cn/usr/uploads/2021/11/3633212832.png
-  [3]: https://lookcos.cn/usr/uploads/2021/11/2905050129.png
-  [4]: https://lookcos.cn/usr/uploads/2021/11/689852720.png
-  [5]: https://lookcos.cn/usr/uploads/2021/11/1797261647.png
+  [1]: ../picture/linked_list_node.png
+  [2]: ../picture/linked_list1.png
+  [3]: ../picture/linked_list_head.png
+  [4]: ../picture/linked_list_insert.png
+  [5]: ../picture/linked_list_delete.png

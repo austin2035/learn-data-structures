@@ -46,4 +46,4 @@
 而`*p`则是获取指针变量p存储的值对应内存地址中存储的值。
 
 
-  [1]: https://lookcos.cn/usr/uploads/2021/11/3435806864.png
+  [1]: ../picture/pointer.png

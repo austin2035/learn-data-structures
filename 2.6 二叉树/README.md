@@ -8,7 +8,7 @@
 
 ### 树的相关概念
 
-![](https://lookcos.cn/usr/uploads/2021/11/2764483793.png)
+![tree](../picture/tree.png)
 
 以上图为准，下面介绍相关概念：
 
@@ -38,7 +38,7 @@
 
 下图是一个以节点A为根的二叉树：
 
-![](https://lookcos.cn/usr/uploads/2021/11/3362715430.png)
+![binnary-tree](../picture/binnary-tree.png)
 
 #### 再提树的基本哲学
 
@@ -160,8 +160,8 @@ ABD##E##CF##G##
 
 最后我们成功创建了一颗如下的二叉树：  
 
-![tree_create](https://lookcos.cn/usr/uploads/2021/11/1373859208.png)
-![tree_link.png](https://lookcos.cn/usr/uploads/2021/11/1740916372.png)
+![tree_create](../picture/tree2.png)
+![tree_link](../picture/tree_link.png)
 
 ### 递归法遍历二叉树  
 

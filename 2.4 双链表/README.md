@@ -417,8 +417,8 @@ B
 详见代码清单。
 
 
-  [1]: https://lookcos.cn/usr/uploads/2021/11/2300058278.png
-  [2]: https://lookcos.cn/usr/uploads/2021/11/266091259.png
-  [3]: https://lookcos.cn/usr/uploads/2021/11/2570152105.png
-  [4]: https://lookcos.cn/usr/uploads/2021/11/3710691052.png
-  [5]: https://lookcos.cn/usr/uploads/2021/11/3281861290.png
+  [1]: ../picture/list.png
+  [2]: ../picture/list_create.png
+  [3]: ../picture/list_insert2.png
+  [4]: ../picture/list_insert.png
+  [5]: ../picture/list_insert3.png

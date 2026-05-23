@@ -201,6 +201,6 @@ a
 完整代码，详见代码清单。  
 
 
-  [1]: https://lookcos.cn/usr/uploads/2021/11/3955121569.png
-  [2]: https://lookcos.cn/usr/uploads/2021/11/4263534373.png
-  [3]: https://lookcos.cn/usr/uploads/2021/11/3021582.png
+  [1]: ../picture/stack.png
+  [2]: ../picture/linked_stack.png
+  [3]: ../picture/stack_push.png

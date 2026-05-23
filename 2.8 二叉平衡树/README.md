@@ -17,7 +17,7 @@
 
 当我们插入一组升序数据[1, 3, 5, 7, 9]，BST1是这样的：
 
-![https://lookcos.cn/usr/uploads/2022/01/253342560.png](https://lookcos.cn/usr/uploads/2022/01/253342560.png)
+![avl1](../picture/avl1.png)
 
 
 
@@ -25,7 +25,7 @@
 
 当我们插入一组降序数据[10, 8, 6, 4,  2]，BST2是这样的：
 
-![https://lookcos.cn/usr/uploads/2022/01/2188928686.png](https://lookcos.cn/usr/uploads/2022/01/2188928686.png)
+![avl2](../picture/avl2.png)
 
 <center>（图2）</center>
 
@@ -39,7 +39,7 @@
 
 如下由一棵平衡二叉树：
 
-![https://lookcos.cn/usr/uploads/2022/01/3398053130.png](https://lookcos.cn/usr/uploads/2022/01/3398053130.png)
+![avl3](../picture/avl3.png)
 
 <center>（图3）</center>
 
@@ -47,7 +47,7 @@
 
 如下有一棵非二叉平衡树：
 
-![https://lookcos.cn/usr/uploads/2022/01/2734824297.png](https://lookcos.cn/usr/uploads/2022/01/2734824297.png)
+![avl4](../picture/avl4.png)
 
 <center>（图4）</center>
 
@@ -63,7 +63,7 @@
 
 相继插入，2和1后，树是这样的：
 
-![https://lookcos.cn/usr/uploads/2022/01/1979666009.png](https://lookcos.cn/usr/uploads/2022/01/1979666009.png)
+![avl5](../picture/avl5.png)
 
 <center>（图5）</center>
 
@@ -73,7 +73,7 @@
 
 如下图的一棵非二叉平衡树，
 
-![https://lookcos.cn/usr/uploads/2022/01/3904874642.png](https://lookcos.cn/usr/uploads/2022/01/3904874642.png)
+![avl6](../picture/avl6.png)
 
 <center>（图6）</center>
 
@@ -190,11 +190,11 @@ avl_node *avl_rotate_ll(avl_node *node)
 
 找到最小不平衡子树（根节点31）后右旋。我们把最小不平衡子树的左子树作为新的top节点。
 
-![https://lookcos.cn/usr/uploads/2022/01/2710011022.gif](https://lookcos.cn/usr/uploads/2022/01/2710011022.gif)
+![avl_ll1](../picture/avl_ll1.gif)
 
 下图演示了最小不平衡子树的根不是二叉树的根，也即最小不平衡子树是二叉树的“真子树”（情况2）。类似于集合中的真子集。
 
-![https://lookcos.cn/usr/uploads/2022/01/1195782005.gif](https://lookcos.cn/usr/uploads/2022/01/1195782005.gif)
+![avl_ll2](../picture/avl_ll2.gif)
 
 ### RR型
 
@@ -215,11 +215,11 @@ avl_node *avl_rotate_rr(avl_node *node)
 
 情况1：
 
-![https://lookcos.cn/usr/uploads/2022/01/335641130.gif](https://lookcos.cn/usr/uploads/2022/01/335641130.gif)
+![avl_rr1](../picture/avl_rr1.gif)
 
 情况2：
 
-![https://lookcos.cn/usr/uploads/2022/01/3773463504.gif](https://lookcos.cn/usr/uploads/2022/01/3773463504.gif)
+![avl_rr2](../picture/avl_rr2.gif)
 
 ### LR型
 
@@ -227,15 +227,15 @@ avl_node *avl_rotate_rr(avl_node *node)
 
 相继插入31，25后没问题，接着插入28:
 
-![https://lookcos.cn/usr/uploads/2022/01/310830524.png](https://lookcos.cn/usr/uploads/2022/01/310830524.png)
+![avl7](../picture/avl7.png)
 
 此时出现了以节点31为根节点的不平衡子树，既不是LL型，也不是RR型，而是LR型。需要进行两次操作，第一次对根节点的左子树左旋：
 
-![https://lookcos.cn/usr/uploads/2022/01/69984455.png](https://lookcos.cn/usr/uploads/2022/01/69984455.png)
+![avl8](../picture/avl8.png)
 
 左旋后，可以发现，该子树变成了LL型，所以再对该子树进行右旋：
 
-![https://lookcos.cn/usr/uploads/2022/01/1024347278.png](https://lookcos.cn/usr/uploads/2022/01/1024347278.png)
+![avl9](../picture/avl9.png)
 
 代码很简单（适用所有LR情况）：
 
@@ -254,21 +254,21 @@ avl_node *avl_balance_lr(avl_node *node)
 
 插入前：
 
-![https://lookcos.cn/usr/uploads/2022/01/3568486191.png](https://lookcos.cn/usr/uploads/2022/01/3568486191.png)
+![avl_lr_l_1](../picture/avl_lr_l_1.png)
 
 插入时：
 
-![https://lookcos.cn/usr/uploads/2022/01/1303432145.png](https://lookcos.cn/usr/uploads/2022/01/1303432145.png)
+![avl_lr_l_2](../picture/avl_lr_l_2.png)
 
 如果插入的数据不是26，而是比28要大的数，那么此时应该插入在28的右子树，则为LR(R)型，不再演示。
 
 插入后：
 
-![https://lookcos.cn/usr/uploads/2022/01/3398837362.png](https://lookcos.cn/usr/uploads/2022/01/3398837362.png)
+![avl_lr_l_3](../picture/avl_lr_l_3.png)
 
 动图演示：
 
-![https://lookcos.cn/usr/uploads/2022/01/2840198242.gif](https://lookcos.cn/usr/uploads/2022/01/2840198242.gif)
+![avl_lr](../picture/avl_lr.gif)
 
 ### RL型
 
@@ -285,21 +285,21 @@ avl_node *avl_balance_rl(avl_node *node)
 
 对于RL(L)型，插入前：
 
-![https://lookcos.cn/usr/uploads/2022/01/1054202197.png](https://lookcos.cn/usr/uploads/2022/01/1054202197.png)
+![avl_rl_l_1](../picture/avl_rl_l_1.png)
 
 插入时：
 
-![https://lookcos.cn/usr/uploads/2022/01/1090190851.png](https://lookcos.cn/usr/uploads/2022/01/1090190851.png)
+![avl_rl_l_2](../picture/avl_rl_l_2.png)
 
 如果插入的不是36，而是比40大的，比如43。那么应该插入在40的右子树，此时就是RL(R)型，不再演示。
 
 插入后：
 
-![https://lookcos.cn/usr/uploads/2022/01/859593372.png](https://lookcos.cn/usr/uploads/2022/01/859593372.png)
+![avl_rl_l_3](../picture/avl_rl_l_3.png)
 
 动图演示：
 
-![https://lookcos.cn/usr/uploads/2022/01/2392874357.gif](https://lookcos.cn/usr/uploads/2022/01/2392874357.gif)
+![avl_rl1](../picture/avl_rl1.gif)
 
 ### 不平衡的调整方法
 

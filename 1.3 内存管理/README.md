@@ -130,4 +130,4 @@ collect2: error: ld returned 1 exit status
 yum install devtoolset-9-libasan-devel libssan
 ```
 
-  [1]: https://lookcos.cn/usr/uploads/2021/11/2076423197.png
+  [1]: ../picture/fsan.png
